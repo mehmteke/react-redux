@@ -3,7 +3,7 @@ import changeCategoryReducer from "./changeCategoryReducer";
 import categoryListReducer from "./categoryListReducer";
 import productListReducer from "./productListReducer"
 
-
+debugger;
 const rootReducer = combineReducers({
     changeCategoryReducer,
     categoryListReducer,

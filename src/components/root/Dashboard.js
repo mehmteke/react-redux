@@ -6,6 +6,7 @@ import {Row,Col} from 'reactstrap';
 
 export default class Dashboard extends Component {
     render() {
+        debugger;
         return (
             <div>
                 <Row>

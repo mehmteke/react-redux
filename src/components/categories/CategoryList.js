@@ -7,16 +7,18 @@ import { ListGroupItem, ListGroup, Badge } from "reactstrap";
 
 class CategoryList extends Component {
   componentDidMount() {
+    debugger;
     this.props.actions.getCategories();
   }
 
   selectedCategory = (category) => {
+    debugger;
     this.props.actions.changeCategory(category.categoryName);
-    console.log(category.id);
     this.props.actions.getProducts(category.id);
   };
 
-  render() {
+  render() { 
+    debugger;
     return (
       <div>
         <h3>
@@ -25,20 +27,21 @@ class CategoryList extends Component {
         <ListGroup>
           {this.props.categories.map((category) => (
             <ListGroupItem
-              active={category.id === this.props.currentCategory.id}
+              active={category.categoryName === this.props.currentCategory}
               onClick={() => this.selectedCategory(category)}
               key={category.id}
             >
               {category.categoryName}
             </ListGroupItem>
           ))}
-        </ListGroup> 
+        </ListGroup>
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
+  debugger;
   return {
     currentCategory: state.changeCategoryReducer,
     categories: state.categoryListReducer,
@@ -46,6 +49,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
+  debugger;
   return {
     actions: {
       getCategories: bindActionCreators(
@@ -56,10 +60,7 @@ function mapDispatchToProps(dispatch) {
         categoryActions.changeCategory,
         dispatch
       ),
-      getProducts: bindActionCreators(
-        productActions.getProductList,
-        dispatch
-      ),
+      getProducts: bindActionCreators(productActions.getProductList, dispatch),
     },
   };
 }
