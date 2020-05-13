@@ -7,18 +7,15 @@ import { ListGroupItem, ListGroup, Badge } from "reactstrap";
 
 class CategoryList extends Component {
   componentDidMount() {
-    debugger;
     this.props.actions.getCategories();
   }
 
   selectedCategory = (category) => {
-    debugger;
     this.props.actions.changeCategory(category.categoryName);
     this.props.actions.getProducts(category.id);
   };
 
   render() { 
-    debugger;
     return (
       <div>
         <h3>
@@ -41,7 +38,6 @@ class CategoryList extends Component {
 }
 
 function mapStateToProps(state) {
-  debugger;
   return {
     currentCategory: state.changeCategoryReducer,
     categories: state.categoryListReducer,
@@ -49,7 +45,6 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  debugger;
   return {
     actions: {
       getCategories: bindActionCreators(

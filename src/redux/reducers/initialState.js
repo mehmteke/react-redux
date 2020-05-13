@@ -1,5 +1,6 @@
 export default {
     currentCategory : "Beverages",
     categories : [],
-    products: []
+    products: [],
+    cart:[],
 }

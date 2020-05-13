@@ -9,7 +9,6 @@ export function changeCategory(category) {
 }
 
 export function getCategoriesSuccess(categories) {
-  debugger;
   return {
     type: actionTypes.GET_CATEGORIES_SUCCESS,
     payload: categories,
@@ -17,7 +16,6 @@ export function getCategoriesSuccess(categories) {
 }
 
 export function getCategories() {
-  debugger;
   return function (dispatch) {
     let url = "http://localhost:3000/categories";
     return fetch(url)
