@@ -12,11 +12,15 @@ import {
   Badge 
 } from "reactstrap";
 import { bindActionCreators } from "redux";
+import { Link
+} from "react-router-dom";
+import alertify from 'alertifyjs';
 
 class CartSummary extends Component {
 
     removeFromCart(product){
         this.props.actions.removeFromCart(product);
+        alertify.error(product.productName  + " Silindi.");
     }  
 
   renderSummary() {
@@ -33,6 +37,8 @@ class CartSummary extends Component {
                    <Badge color="success">{cartItem.quantity}</Badge>                                        
               </DropdownItem>    
             )}
+            <DropdownItem divider></DropdownItem>
+            <DropdownItem><Link to="./cart">Sepete Git</Link></DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>
     );
