@@ -55,7 +55,7 @@ function mapDispatchToProps(dispatch) {
         categoryActions.changeCategory,
         dispatch
       ),
-      getProducts: bindActionCreators(productActions.getProductList, dispatch),
+      getProducts: bindActionCreators(productActions.getProducts, dispatch),
     },
   };
 }

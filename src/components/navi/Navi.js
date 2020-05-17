@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import CartSummary from '../cart/CartSummary';
 import {
   Collapse,
@@ -13,7 +14,7 @@ import {
 const Navi = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
+  const toggle = () => setIsOpen(!isOpen); 
 
   return (
     <div>
@@ -23,7 +24,8 @@ const Navi = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="/products/">Products</NavLink>
+               {/* <Link to="/saveproduct">Ürün ekle</Link> */}
+               <NavLink href="/saveproduct">Ürün ekle</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="https://github.com/mehmteke?tab=repositories">My Repositories</NavLink>
