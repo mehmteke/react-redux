@@ -14,9 +14,11 @@ function AddOrUpdateProduct({
   history,
   ...props
 }) {
+   debugger;
   const [product, setProduct] = useState({ ...props.product });
   const [errors, setErrors] = useState({});
   useEffect(() => {
+    debugger;
     if (categories.length === 0) {
       getCategories();
     }
@@ -24,6 +26,7 @@ function AddOrUpdateProduct({
   }, [props.product]);
 
   function handleChange(event) {
+    debugger;
     const { name, value } = event.target;
     setProduct(previousProduct => ({
       ...previousProduct,
@@ -34,6 +37,7 @@ function AddOrUpdateProduct({
   }
 
   function validate(name,value) {
+    debugger;
     if (name === "productName" && value === "") {
       setErrors(previousErrors => ({
         ...previousErrors,
@@ -48,6 +52,7 @@ function AddOrUpdateProduct({
   }
 
   function handleSave(event) {
+    debugger;
     event.preventDefault();
     saveProduct(product).then(() => {
       history.push("/");
@@ -66,11 +71,13 @@ function AddOrUpdateProduct({
 }
 
 export function getProductById(products, productId) {
+  debugger;
   let product = products.find(product => product.id == productId) || null;
   return product;
 }
 
 function mapStateToProps(state, ownProps) {
+  debugger;
   const productId = ownProps.match.params.productId;
   const product =
     productId && state.productListReducer.length > 0

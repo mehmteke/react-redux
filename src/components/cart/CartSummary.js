@@ -20,7 +20,7 @@ class CartSummary extends Component {
 
     removeFromCart(product){
         this.props.actions.removeFromCart(product);
-        alertify.error(product.productName  + " Silindi.");
+        alertify.error(product.productName  + " Deleted");
     }  
 
   renderSummary() {
@@ -47,7 +47,7 @@ class CartSummary extends Component {
   renderEmpty() {
     return (
         <NavItem>
-          <NavLink>Sepetiniz Boş</NavLink>
+          <NavLink>Your cart is empty</NavLink>
         </NavItem>
     );
   }

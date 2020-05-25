@@ -52,9 +52,11 @@ export function handleError(error){
 
 export function getProducts(categoryId) {
   return function(dispatch) {
-    let url = "http://localhost:3000/products";
+    let url = "http://localhost:53987/api/product/";
     if (categoryId) {
-      url = url + "?categoryId=" + categoryId;
+      url = url + "FindByCategoryIdAsync?categoryId=" + categoryId;
+    }else{
+      url = url + "FindByCategoryIdAsync?categoryId=" + 1;
     }
     return fetch(url)
       .then(response => response.json())

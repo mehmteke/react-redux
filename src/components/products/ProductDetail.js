@@ -3,9 +3,10 @@ import TextInput from "../toolbox/TextInput";
 import SelectInput from "../toolbox/SelectInput";
 
 const ProductDetail = ({ categories, product, onSave, onChange,errors }) => {
+  debugger;
   return (
     <form onSubmit={onSave}>
-      <h2>{product.id ? "Güncelle" : "Ekle"}</h2>
+      <h2>{product.id ? "Update" : "Add"}</h2>
       <TextInput
         name="productName"
         label="Product Name"
@@ -50,9 +51,9 @@ const ProductDetail = ({ categories, product, onSave, onChange,errors }) => {
         onChange={onChange}
         error={errors.unitsInStock}
       />
-
+      <br></br>
       <button type="submit" className="btn btn-success">
-        Kaydet
+        Save
       </button>
     </form>
   );

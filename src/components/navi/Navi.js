@@ -25,7 +25,7 @@ const Navi = (props) => {
           <Nav className="ml-auto" navbar>
             <NavItem>
                {/* <Link to="/saveproduct">Ürün ekle</Link> */}
-               <NavLink href="/saveproduct">Ürün ekle</NavLink>
+               <NavLink href="/saveproduct">Product Add</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="https://github.com/mehmteke?tab=repositories">My Repositories</NavLink>

@@ -10,7 +10,7 @@ import alertify from 'alertifyjs';
      
     removeFromCart(product){
         this.props.actions.removeFromCart(product);
-        alertify.error(product.productName  + " Silindi.");
+        alertify.error(product.productName  + " Deleted.");
     }
     render() {
         console.log(this.props.cart);
@@ -34,7 +34,7 @@ import alertify from 'alertifyjs';
                  <td>{cartItem.product.unitPrice}</td> 
                  <td>{cartItem.quantity}</td>
                  <td>
-                     <Button color="danger" size="sm" onClick = {()=>this.removeFromCart(cartItem.product)} >sil</Button>
+                     <Button color="danger" size="sm" onClick = {()=>this.removeFromCart(cartItem.product)} >Delete</Button>
                  </td>
                </tr>
                )
